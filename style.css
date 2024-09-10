@@ -1,0 +1,230 @@
+/* 1. Global Reset and Box Model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin for all elements */
+* {
+  margin: 0;
+}
+
+/* 3. Typography and Body Defaults */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 4. Media and Form Defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Form Element Inheritance */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 6. Avoid text overflow */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 7. Root Stacking Context */
+#root, #__next {
+  isolation: isolate;
+}
+
+/* 8. HTML Font Sizing (Sets base REM to 10px) */
+html {
+  font-size: 62.5%;
+  font-family: "League Spartan", sans-serif;
+}
+
+/* =========== Main Section Styling ============ */
+/* Main Container Styling */
+.container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========== Title Section Styling ============ */
+h1 {
+  font-weight: 900;
+  color: hsl(300, 43%, 22%);
+  letter-spacing: 0;
+  line-height: 0.8;
+  font-size: 3rem;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.container__grid__title p {
+  color: hsl(303, 10%, 53%);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+/* =========== Rating Stars Section Styling ============ */
+.container__grid__ratingstars__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: hsl(300, 24%, 96%);
+  margin-bottom: 2rem;
+  height: 7rem;
+  border-radius: 8px;
+}
+
+.stars__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.7rem;
+}
+
+.container__grid__ratingstars__box h5 {
+  font-size: 1.5rem;
+  color: hsl(300, 43%, 22%);
+}
+
+.besttech {
+  margin-bottom: 5rem;
+}
+
+/* =========== Customer Review Section Styling ============ */
+.container__grid__review {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: hsl(300, 43%, 22%);
+  padding: 2.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
+.container__grid__review__name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.photo {
+  border-radius: 50%;
+  height: 4.5rem;
+}
+
+.container__grid__review__name__text h5 {
+  color: white;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 0.7;
+}
+
+.container__grid__review__name__text p {
+  color: hsl(333, 80%, 67%);
+  font-weight: 400;
+  font-size: 1.7rem;
+}
+
+.container__grid__review > p {
+  color: hsl(300, 24%, 96%);
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 1.3;
+}
+
+/* =========== Media Queries for Desktop (min-width: 900px) ============ */
+@media (min-width: 900px) {
+  main {
+      height: 100vh;
+  }
+
+  .container {
+      padding: 10rem;
+  }
+
+  .container__grid {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: auto auto;
+      height: 100%;
+      width: 100%;
+  }
+
+  /* Title Section on Larger Screens */
+  .container__grid__title h1 {
+      width: 70%;
+      font-size: 5rem;
+      font-weight: 700;
+      text-align: left;
+      margin-bottom: 1.5rem;
+      padding-left: 0;
+  }
+
+  .container__grid__title p {
+      width: 80%;
+      text-align: left;
+      font-size: 2rem;
+  }
+
+  /* Align the Rating Stars Section to the Right */
+  .container__grid__ratingstars {
+      display: flex;
+      justify-content: flex-end; /* Aligns the rating stars box to the right */
+      align-items: flex-end;
+      flex-direction: column;
+  }
+
+  .container__grid__ratingstars__box {
+      flex-direction: row;
+      gap: 3rem;
+      justify-content: center;
+      height: 5rem;
+      width: 38rem;
+  }
+
+  /* Spacing for Rating Stars Boxes */
+  .reviews {
+      margin-right: 10rem;
+  }
+
+  .reportguru {
+      margin-right: 5rem;
+  }
+
+  .besttech {
+      margin-right: 0rem;
+  }
+
+  /* Customer Review Section on Larger Screens */
+  .container__grid__second-section {
+      grid-column: span 2;
+      width: 100%;
+      margin-top: 2rem;
+      display: flex;
+      gap: 3rem;
+  }
+
+  .container__grid__review {
+      height: 25rem;
+  }
+
+  .roberts {
+      margin-top: 3rem;
+  }
+
+  .wallace {
+      margin-top: 6rem;
+  }
+}
